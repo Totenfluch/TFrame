@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
-import me.Totenfluch.classpackage.ResourceLoader;
+import me.Totenfluch.CoreClasses.ResourceLoader;
 
 public class GameArea extends JPanel implements ActionListener{
 	private static final long serialVersionUID = 1L;

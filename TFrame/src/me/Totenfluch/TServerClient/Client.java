@@ -8,9 +8,9 @@ import java.net.*;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
-import me.Totenfluch.classpackage.ConnectingWindow;
-import me.Totenfluch.classpackage.DataCrypter;
-import me.Totenfluch.classpackage.Main;
+import me.Totenfluch.CoreClasses.ConnectingWindow;
+import me.Totenfluch.CoreClasses.DataCrypter;
+import me.Totenfluch.CoreClasses.Main;
 
 public class Client extends JFrame implements Runnable
 {

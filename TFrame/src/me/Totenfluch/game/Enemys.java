@@ -3,7 +3,7 @@ import java.awt.Image;
 
 import javax.swing.ImageIcon;
 
-import me.Totenfluch.classpackage.OtherStuff;
+import me.Totenfluch.CoreClasses.OtherStuff;
 
 public class Enemys {
 

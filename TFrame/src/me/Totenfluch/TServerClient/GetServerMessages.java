@@ -4,8 +4,8 @@ import java.io.IOException;
 
 import javax.swing.JOptionPane;
 
-import me.Totenfluch.classpackage.ConsoleWindow;
-import me.Totenfluch.classpackage.OtherStuff;
+import me.Totenfluch.CoreClasses.ConsoleWindow;
+import me.Totenfluch.CoreClasses.OtherStuff;
 
 public class GetServerMessages{
 	public static String newestreply = null;
