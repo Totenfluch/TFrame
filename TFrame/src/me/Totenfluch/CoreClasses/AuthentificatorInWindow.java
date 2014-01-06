@@ -62,9 +62,8 @@ public class AuthentificatorInWindow extends JFrame{
 				if(Double.parseDouble(input.getText()) == ValidKey ){
 					AuthentificatorWindowActive = false;
 					ConsoleWindow.ExecuteWindowActive = true;
-					JOptionPane.showMessageDialog(null, "Welcome back, " + OtherStuff.LoginName[LoginWindow.LoginIDBuffer]+ " !\n");
-					ConsoleWindow.TextArea1.append(OtherStuff.TheNormalTime() + " You logged in as" + OtherStuff.LoginName[LoginWindow.LoginIDBuffer]+ "!\n");
-					ConsoleWindow.TextArea1.append(OtherStuff.TheNormalTime() + " Your Permissions Level is at " + OtherStuff.LoginPermissions[LoginWindow.LoginIDBuffer]+ " / 1000 !\n");
+					JOptionPane.showMessageDialog(null, "Welcome back, " + LoginWindow.ActiveUser + " !\n");
+					ConsoleWindow.TextArea1.append(OtherStuff.TheNormalTime() + " You logged in as" + LoginWindow.ActiveUser+ "!\n");
 				}else{
 					JOptionPane.showMessageDialog(null, "Your Authentificator Code seems to be wrong. Try again!");
 				}

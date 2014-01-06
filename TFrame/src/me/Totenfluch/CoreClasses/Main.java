@@ -155,7 +155,7 @@ public class Main {
 		Runtime.getRuntime().addShutdownHook(new Thread() {
 			public void run() {
 				if(LoginWindow.isLoggingIn == false){
-					Client.processMessage("/logout " + OtherStuff.LoginID[LoginWindow.ActiveUserID] + " " + OtherStuff.LoginName[LoginWindow.ActiveUserID]);
+					Client.processMessage("/logout " + LoginWindow.ActiveUser + " " + LoginWindow.ActiveUser);
 					try {
 						Thread.sleep(50);
 					} catch (InterruptedException e) {
@@ -169,10 +169,6 @@ public class Main {
 
 		// Updating
 
-		if(LoginWindow.getLoginFile == false){
-			OtherStuff.GetLoginCredicals();
-			LoginWindow.getLoginFile = true;
-		}
 
 		String host = "188.194.13.44";
 		int port = Integer.parseInt("9987");
@@ -184,15 +180,6 @@ public class Main {
 			chatframe.setVisible(false);
 		}
 		chatframe.setIconImage(img.getImage());
-
-		/*chatframe.addWindowListener(new WindowAdapter() {
-			public void windowClosing(WindowEvent event) {
-				System.exit(1);
-			}
-			public void windowDeiconified(WindowEvent e){
-				chatframe.setExtendedState(1);
-			}
-		});*/
 
 		Client.processMessage("/getversion");
 		while(Client.waitingforreply == true){try{Thread.sleep(50);}catch(InterruptedException e){e.printStackTrace();}}
@@ -224,16 +211,17 @@ public class Main {
 			Client.processMessage(sendme);
 			while(Client.waitingforreply == true){try{Thread.sleep(50);}catch(InterruptedException e){e.printStackTrace();}}
 			if(OtherStuff.LatestServerReply().equals("true")){
-				JOptionPane.showMessageDialog(null, "Welcome back, " + OtherStuff.LoginName[LoginWindow.ActiveUserID]+ " !\n");
-				ConsoleWindow.TextArea1.append(OtherStuff.TheNormalTime() + " You Auto-logged in as" + OtherStuff.LoginName[LoginWindow.ActiveUserID]+ "!\n");
+				JOptionPane.showMessageDialog(null, "Welcome back, " + RememberMeClass.RememberMeCredicals[2]+ " !\n");
+				ConsoleWindow.TextArea1.append(OtherStuff.TheNormalTime() + " You Auto-logged in as " + RememberMeClass.RememberMeCredicals[2] + "!\n");
 				ConsoleWindow.TextArea1.append(OtherStuff.TheNormalTime() + " Type: /logout to cancel your Auto-login\n"); 
-				ConsoleWindow.TextArea1.append(OtherStuff.TheNormalTime() + " Your Permissions Level is at " + OtherStuff.LoginPermissions[LoginWindow.ActiveUserID]+ " / 1000 !\n");
 				ConsoleWindow.ExecuteWindowActive = true ;
+				LoginWindow.ActiveUser = RememberMeClass.RememberMeCredicals[2];
+				LoginWindow.ActiveUserID = Integer.valueOf(RememberMeClass.RememberMeCredicals[1]);
 				LoginWindow.isLoggingIn = false;
 			}
 		}
 
-		int checkconditionsamount = 595;
+		int checkconditionsamount = 3580;
 		while(checkconditions == true){
 			try {
 				Thread.sleep(100);
@@ -340,7 +328,7 @@ public class Main {
 			AuthentificatorInWindow.ValidKey = Double.parseDouble(validkey);
 
 			checkconditionsamount++;
-			if(checkconditionsamount >= 600){
+			if(checkconditionsamount >= 3600){
 
 				try {
 					String line;

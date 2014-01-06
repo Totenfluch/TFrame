@@ -46,6 +46,7 @@ public class LoginWindow extends JFrame{
 	private static final long serialVersionUID = 1L;
 	static boolean getLoginFile = false;
 	public static int ActiveUserID;
+	public static String ActiveUser;
 	public static JTextField TextField1;
 	private JTextField TextField2;
 	private JTextField TextField3;
@@ -358,7 +359,8 @@ public class LoginWindow extends JFrame{
 
 			// Override Login Start
 			if(event.getSource() == TextField1 && Main.DevBuild == true){
-				OtherStuff.LoginID[0] = "0";
+				ActiveUserID = 0;
+				ActiveUser = "Admin";
 				LoginWindow.isLoggingIn = false;
 				ConsoleWindow.ExecuteWindowActive = true;
 				ConsoleWindow.TextArea1.append(OtherStuff.TheNormalTime() + " (override Login)\n");
@@ -424,16 +426,17 @@ public class LoginWindow extends JFrame{
 				while(Client.waitingforreply == true){try{Thread.sleep(50);}catch(InterruptedException e){e.printStackTrace();}}
 				if(OtherStuff.LatestServerReply().equals("true")){
 
-					if(ComboBoxLoginChooser.getSelectedItem().equals("Console") && Integer.parseInt(OtherStuff.LoginPermissions[LoginCodeInput]) >= 1000){
+					if(ComboBoxLoginChooser.getSelectedItem().equals("Console")){
 						ActiveUserID = Integer.parseInt(TextField1.getText());
+						ActiveUser = sTextfield2.toString();
 						if(RememberMeCheckBox.isSelected()){
 							RememberMeClass.RememberMeSave(RememberMeCheckBox.isSelected(), LoginCodeInput, sTextfield2.toString(), verificationcopdeInput, String.valueOf(sPasswordfield), checkboxes, ComboBoxLoginChooser.getSelectedItem().toString());
 						}else{
 							RememberMeClass.RememberMeLogout();
 						}
-						JOptionPane.showMessageDialog(null, "Welcome back, " + OtherStuff.LoginName[ActiveUserID]+ " !\n");
-						ConsoleWindow.TextArea1.append(OtherStuff.TheNormalTime() + " You logged in as" + OtherStuff.LoginName[ActiveUserID]+ "!\n");
-						ConsoleWindow.TextArea1.append(OtherStuff.TheNormalTime() + " Your Permissions Level is at " + OtherStuff.LoginPermissions[ActiveUserID]+ " / 1000 !\n");
+						
+						JOptionPane.showMessageDialog(null, "Welcome back, " + ActiveUser + " !\n");
+						ConsoleWindow.TextArea1.append(OtherStuff.TheNormalTime() + " You logged in as" + ActiveUser + "!\n");
 						ConsoleWindow.ExecuteWindowActive = true ;
 						LoginWindow.isLoggingIn = false;
 

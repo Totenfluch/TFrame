@@ -19,12 +19,12 @@ import me.Totenfluch.game.GameWindow;
 
 
 public class OtherStuff {
-	public static String[] LoginID = new String[9999];
+	/*public static String[] LoginID = new String[9999];
 	public static String[] LoginName = new String[9999];
 	public static String[] LoginCode = new String[9999];
 	public static String[] LoginPassword = new String[9999];
 	public static String[] LoginPermissions = new String[9999];
-	public static String[] LoginFlags = new String[9999];
+	public static String[] LoginFlags = new String[9999];*/
 
 
 
@@ -114,7 +114,7 @@ public class OtherStuff {
 		return ComputerMac;
 	}
 	
-	public static void GetLoginCredicals(){
+	/*public static void GetLoginCredicals(){
 		for(int i=0; i<9999; i++){
 			LoginID[i] = "";
 			LoginName[i] = "";
@@ -127,8 +127,8 @@ public class OtherStuff {
 		try{
 
 			/*decrypted*/ //URL oracle = new URL("https://dl.dropboxusercontent.com/u/88851086/asidfas89djvrt34j7985vj7234j7k2j3745j723jk745jk78234757k82v347k582xdk7458vc237l858192k874c51l235k1vc27837l81l5c1235.txt");
-			/*encrypted */URL oracle = new URL("https://dl.dropboxusercontent.com/u/88851086/JFrameencryptedDatabase.txt");
-			BufferedReader in = new BufferedReader(
+			/*encrypted URL oracle = new URL("https://dl.dropboxusercontent.com/u/88851086/JFrameencryptedDatabase.txt");
+			/*BufferedReader in = new BufferedReader(
 					new InputStreamReader(oracle.openStream()));
 
 			String inputLine;
@@ -161,7 +161,7 @@ public class OtherStuff {
 			System.exit(1);
 		}
 
-	}
+	}*/
 
 	public static void GetVersion(){
 		try{
