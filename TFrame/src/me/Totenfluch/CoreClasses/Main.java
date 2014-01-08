@@ -32,7 +32,7 @@ import me.Totenfluch.game.GameWindow;
 
 public class Main {
 
-	public static int Version = 11;
+	public static int Version = 12;
 	public static int AllowedVersion;
 	public static String ComputerName;
 	public static InetAddress ComputerIP = null;
