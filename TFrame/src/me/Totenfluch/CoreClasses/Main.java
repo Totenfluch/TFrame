@@ -100,6 +100,10 @@ public class Main {
 		AddAccountWindow AddAccountFrame = new AddAccountWindow();
 		AddAccountFrame.setIconImage(img.getImage());
 		AddAccountFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		RegisterAccountWindow RegisterAccountFrame = new RegisterAccountWindow();
+		RegisterAccountFrame.setIconImage(img.getImage());
+		RegisterAccountFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 
 		CalculatorFrame.addWindowListener(new WindowAdapter() {
@@ -149,6 +153,13 @@ public class Main {
 				if(ConsoleWindow.ExecuteWindowActive == false){
 					System.exit(1);
 				}
+			}
+		});
+		
+		RegisterAccountFrame.addWindowListener(new WindowAdapter() {
+			public void windowClosing(WindowEvent event) {
+				RegisterAccountWindow.RegisterAccountWindowActive = false;
+				ConsoleWindow.TextArea1.append("You closed the Create Account Window: Shutting it down.\n");
 			}
 		});
 
@@ -288,6 +299,12 @@ public class Main {
 				executeframe.setAlwaysOnTop(true);
 			}else if(ConsoleWindow.ExecuteWindowIsInforeground == false && executeframe.isAlwaysOnTop() == true){
 				executeframe.setAlwaysOnTop(false);
+			}
+			
+			if(RegisterAccountWindow.RegisterAccountWindowActive == true && RegisterAccountFrame.isVisible() == false){
+				RegisterAccountFrame.setVisible(true);
+			}else if(RegisterAccountWindow.RegisterAccountWindowActive == false && RegisterAccountFrame.isVisible() == true){
+				RegisterAccountFrame.setVisible(false);
 			}
 
 			if(GetServerMessages.reconnecting == true && Client.IsConnectedToServer == false){

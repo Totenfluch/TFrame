@@ -202,6 +202,7 @@ public class LoginWindow extends JFrame{
 		PasswordField1.addActionListener(handler);
 		Jbutton1.addActionListener(handler);
 		RememberMeCheckBox.addActionListener(handler);
+		Register.addActionListener(handler);
 
 		TextField1.addKeyListener(new KeyListener(){
 
@@ -366,7 +367,12 @@ public class LoginWindow extends JFrame{
 				ConsoleWindow.TextArea1.append(OtherStuff.TheNormalTime() + " (override Login)\n");
 			}
 			// Override Login End
-
+			
+			
+			if(event.getSource() == Register){
+				RegisterAccountWindow.RegisterAccountWindowActive = true;
+			}
+			
 			if(event.getSource() == Jbutton1){
 				String sTextfield1 = TextField1.getText();
 				String sTextfield2 = TextField2.getText();
