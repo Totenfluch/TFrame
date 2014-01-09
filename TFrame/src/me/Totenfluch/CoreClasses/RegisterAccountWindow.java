@@ -19,9 +19,9 @@ public class RegisterAccountWindow extends JFrame{
 	private JTextField Email;
 	private JTextField FirstName;
 	private JTextField LastName;
-	private JTextField Birthday;
+	private JTextField BetaKey;
 	private JButton Create;
-	private JTextArea AGB;
+	private JTextArea TOS;
 	
 	public RegisterAccountWindow(){
 		setSize(425, 350);
@@ -52,14 +52,14 @@ public class RegisterAccountWindow extends JFrame{
 		LastName = new JTextField("LastName", 15);
 		background.add(LastName);
 		
-		Birthday = new JTextField("BirthDay YYYY:MM:DD", 30);
-		background.add(Birthday);
+		BetaKey = new JTextField("Beta Invitation Key", 30);
+		background.add(BetaKey);
 		
-		AGB = new JTextArea("I haz All Rights I want\nYou no cheat Programm\nTotenfluch is cooler than me\nTotenfluch is a great Person\nI admit to give all my money to Totenfluch\nI admit to buy a expensive washing machine\nI hope this Text Ends now.\nIt does now!", 8, 30);
-		AGB.setEditable(false);
-		background.add(AGB);
+		TOS = new JTextArea("You are not allowed to edit the Programm\nYou are not allowed to cheat the program in any way\nI Accept that my Account can be closed anytime\nNo Racism, harrasment in the IRC\nI admit to give all my money to Totenfluch\nI admit to buy a expensive washing machine\nI hope this Text Ends now.\nIt does now!", 8, 30);
+		TOS.setEditable(false);
+		background.add(TOS);
 		
-		Create = new JButton("                   Create Account and Accept AGB                  ");
+		Create = new JButton("                   Create Account and Accept TOS                  ");
 		background.add(Create);	
 		
 	}
